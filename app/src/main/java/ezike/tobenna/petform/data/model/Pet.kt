@@ -5,10 +5,10 @@ import com.squareup.moshi.Json
 data class Pet(
 
     @Json(name = "pages")
-    val pages: List<Pages?>,
+    val pages: List<Pages>,
 
     @Json(name = "name")
-    val name: String?,
+    val name: String,
 
     @Json(name = "id")
     val id: String
