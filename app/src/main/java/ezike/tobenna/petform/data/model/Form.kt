@@ -2,7 +2,7 @@ package ezike.tobenna.petform.data.model
 
 import com.squareup.moshi.Json
 
-data class Pet(
+data class Form(
 
     @Json(name = "pages")
     val pages: List<Pages>,
