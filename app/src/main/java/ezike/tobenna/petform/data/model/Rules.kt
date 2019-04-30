@@ -17,5 +17,5 @@ data class Rules(
     val value: String,
 
     @Json(name = "targets")
-    val targets: List<String?>
+    val targets: List<String>
 )
