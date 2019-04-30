@@ -1,7 +1,10 @@
 package ezike.tobenna.petform.data.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Rules(
 
     @Json(name = "otherwise")
@@ -18,4 +21,4 @@ data class Rules(
 
     @Json(name = "targets")
     val targets: List<String>
-)
+) : Parcelable
