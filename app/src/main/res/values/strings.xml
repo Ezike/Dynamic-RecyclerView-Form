@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Pet Form</string>
+    <string name="hint_date">Select Date</string>
+    <string name="form_image">form image</string>
+    <string name="phone_number">Phone No.</string>
+    <string name="enter_text">Enter Text</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string-array name="yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 </resources>

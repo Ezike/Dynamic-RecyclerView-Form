@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="element"
+                type="ezike.tobenna.petform.data.model.Elements"/>
+
+    </data>
+
+    <LinearLayout
+            style="@style/parent_layout"
+            android:orientation="vertical">
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/yesno_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/text_input_min_width"
+                android:layout_margin="@dimen/text_input_margin"
+                app:ms_alwaysShowFloatingLabel="true"
+                app:hint="@{element.label}"
+                android:entries="@array/yes_no"
+                app:ms_floatingLabelColor="@color/colorAccent"
+                app:ms_arrowColor="@color/colorAccent"
+        />
+
+    </LinearLayout>
+
+
+</layout>

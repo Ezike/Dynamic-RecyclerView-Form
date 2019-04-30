@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_padding">4dp</dimen>
+    <dimen name="cardview_radius">8dp</dimen>
+    <dimen name="stroke_width">1dp</dimen>
+    <dimen name="parent_margin_start">16dp</dimen>
+    <dimen name="parent_margin_end">@dimen/parent_margin_start</dimen>
+    <dimen name="parent_margin_top">16dp</dimen>
+    <dimen name="text_input_min_width">350dp</dimen>
+    <dimen name="text_input_margin">16dp</dimen>
+    <dimen name="header_text_size">28sp</dimen>
+    <dimen name="text_drawable_padding">8dp</dimen>
+    <dimen name="previous_text_padding">16dp</dimen>
+    <dimen name="prev_text_size">20sp</dimen>
+    <dimen name="next_text_padding">16dp</dimen>
+    <dimen name="next_text_size">20sp</dimen>
+</resources>

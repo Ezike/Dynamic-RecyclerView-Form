@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="element"
+                type="ezike.tobenna.petform.data.model.Elements"/>
+
+    </data>
+
+    <LinearLayout
+            style="@style/parent_layout"
+            android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/formattednumeric_input"
+                style="@style/text_input_layout"
+                android:hint="@{element.label}"
+                tools:hint="@string/phone_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/formattednumeric_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</layout>

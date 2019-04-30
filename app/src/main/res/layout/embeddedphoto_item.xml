@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="element"
+                type="ezike.tobenna.petform.data.model.Elements"/>
+
+    </data>
+
+    <LinearLayout
+            style="@style/parent_layout"
+            android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/cardview_radius"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="@dimen/stroke_width">
+
+            <ImageView
+                    android:id="@+id/form_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/form_image"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:loadImage="@{element.file}"
+                    tools:src="@tools:sample/avatars"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>
