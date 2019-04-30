@@ -42,13 +42,14 @@
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:scrollbars="vertical"
                 app:items="@{viewModel.elements}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -58,13 +59,14 @@
                 android:drawableTop="@color/colorAccent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent" android:id="@+id/linearLayout">
 
             <TextView
+                    android:id="@+id/prev_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="start"
+                    android:gravity="start|center"
                     android:padding="@dimen/previous_text_padding"
                     android:textSize="@dimen/prev_text_size"
                     android:text="@string/previous"
@@ -75,17 +77,18 @@
                     android:focusable="true"/>
 
             <TextView
+                    android:id="@+id/next_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="end"
+                    android:gravity="end|center"
                     android:padding="@dimen/next_text_padding"
                     android:textSize="@dimen/next_text_size"
                     android:text="@string/next"
                     android:drawablePadding="@dimen/text_drawable_padding"
+                    android:drawableEnd="@drawable/forward_arrow"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:drawableEnd="@drawable/forward_arrow"
                     android:focusable="true"/>
 
         </LinearLayout>
