@@ -1,4 +1,4 @@
-package ezike.tobenna.petform.di
+package ezike.tobenna.petform.di.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

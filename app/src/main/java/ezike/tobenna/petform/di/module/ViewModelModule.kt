@@ -1,4 +1,4 @@
-package ezike.tobenna.petform.di
+package ezike.tobenna.petform.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

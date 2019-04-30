@@ -1,4 +1,4 @@
-package ezike.tobenna.petform.di
+package ezike.tobenna.petform.di.module
 
 import android.app.Application
 import com.squareup.moshi.Moshi
