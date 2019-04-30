@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class FormViewModel @Inject constructor(repository: FormRepository) : ViewModel() {
 
-    private val formData = repository.form
+    private val formData = repository.getData()
 
     private val _elements = MutableLiveData<List<Elements>>()
 

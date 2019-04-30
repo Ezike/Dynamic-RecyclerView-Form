@@ -4,8 +4,9 @@ import ezike.tobenna.petform.data.local.DataSource
 import ezike.tobenna.petform.data.model.Form
 import javax.inject.Inject
 
-class FormRepository @Inject constructor(private val dataSource: DataSource<Form>) {
+class FormRepository @Inject constructor(dataSource: DataSource<Form>) {
 
-    fun getData() = dataSource.getData()
+    private val form = dataSource.getData()
 
+    fun getData() = form
 }
