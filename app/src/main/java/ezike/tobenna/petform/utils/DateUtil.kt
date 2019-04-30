@@ -7,16 +7,6 @@ import java.util.*
 
 object DateUtil {
 
-    private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH)
-
-    fun stringToDate(s: String): Date? {
-        return try {
-            dateFormat.parse(s)
-        } catch (e: ParseException) {
-            null
-        }
-    }
-
     fun formatDate(selectedDate: String): String {
 
         val monthDate = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH)
