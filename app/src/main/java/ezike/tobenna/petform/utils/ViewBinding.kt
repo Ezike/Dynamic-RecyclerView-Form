@@ -1,13 +1,39 @@
 package ezike.tobenna.petform.utils
 
+import android.view.View
 import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
+import ezike.tobenna.petform.ui.adapter.BindableAdapter
+import fr.ganfra.materialspinner.MaterialSpinner
 
-fun ImageView.loadImage(url: String?) {
-    if (url != null) Glide.with(context)
+@BindingAdapter("loadImage")
+fun ImageView.loadImage(url: String) {
+    GlideApp.with(context)
         .load(url)
-        .thumbnail(.4f)
-        .apply(RequestOptions().placeholder(android.R.color.darker_gray))
+        .placeholder(android.R.color.darker_gray)
         .into(this)
 }
+
+@BindingAdapter("visibleGone")
+fun showHide(view: View, show: Boolean) {
+    if (show)
+        view.visibility = View.VISIBLE
+    else
+        view.visibility = View.GONE
+}
+
+@BindingAdapter("items")
+fun <T> RecyclerView.setItems(data: T) {
+    if (adapter is BindableAdapter<*>) {
+        with((adapter as BindableAdapter<T>)) {
+            setData(data)
+        }
+    }
+}
+
+@BindingAdapter("hint")
+fun MaterialSpinner.setCustomHint(hint: String) {
+    this.hint = hint
+}
+
