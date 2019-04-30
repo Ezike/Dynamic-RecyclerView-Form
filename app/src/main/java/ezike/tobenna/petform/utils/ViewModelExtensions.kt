@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import ezike.tobenna.petform.ui.base.BaseActivity
+import ezike.tobenna.petform.ui.base.DaggerFragment
 
 /**
  * Synthetic sugaring to get instance of [ViewModel] for [AppCompatActivity].
@@ -16,6 +17,6 @@ inline fun <reified T : ViewModel> BaseActivity.getViewModel(): T {
 /**
  * Synthetic sugaring to get instance of [ViewModel] for [Fragment].
  */
-inline fun <reified T : ViewModel> Fragment.getViewModel(): T {
-    return ViewModelProviders.of(this).get(T::class.java)
+inline fun <reified T : ViewModel> DaggerFragment.getViewModel(): T {
+    return ViewModelProviders.of(activity!!, viewModelFactory).get(T::class.java)
 }

@@ -7,6 +7,6 @@ import ezike.tobenna.petform.ui.MainActivity
 @Module
 abstract class ActivityModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [FragmentBuildersModule::class])
     abstract fun contributeMainActivity(): MainActivity
 }

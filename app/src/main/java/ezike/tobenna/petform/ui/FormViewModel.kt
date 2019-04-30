@@ -16,25 +16,11 @@ class FormViewModel @Inject constructor(repository: FormRepository) : ViewModel(
     val elements: LiveData<List<Elements>>
         get() = _elements
 
-    init {
-
-        getElements()
-    }
 
     fun getFormData() = formData
 
-    private fun getElements() {
-
-        if (formData != null) {
-
-            for (page in formData.pages.subList(0,1)) {
-
-                for (section in page.sections.subList(0,1)) {
-
-                    _elements.value = section.elements
-                }
-            }
-        }
+    fun setElements(elements: List<Elements>) {
+        _elements.value = elements
     }
 
 }

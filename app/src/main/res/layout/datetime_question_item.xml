@@ -22,10 +22,8 @@
 
             <ezike.tobenna.petform.view.DateEditText
                     android:id="@+id/datetime_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:maxLines="1"/>
+                    style="@style/text_input_edittext"
+                    android:inputType="date"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

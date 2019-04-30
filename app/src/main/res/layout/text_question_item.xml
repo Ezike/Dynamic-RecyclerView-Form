@@ -22,10 +22,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:maxLines="1"/>
+                    style="@style/text_input_edittext"
+                    android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

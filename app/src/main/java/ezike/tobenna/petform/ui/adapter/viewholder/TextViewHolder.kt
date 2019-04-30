@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import ezike.tobenna.petform.data.model.Elements
 import ezike.tobenna.petform.databinding.TextQuestionItemBinding
 
-class TextViewHolder(private val binding: TextQuestionItemBinding) : BaseViewHolder(binding) {
+class TextViewHolder(val binding: TextQuestionItemBinding) : BaseViewHolder(binding) {
 
     override fun bind(item: Elements) {
         binding.element = item

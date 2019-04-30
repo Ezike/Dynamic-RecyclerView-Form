@@ -2,98 +2,14 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+>
 
-    <data>
-
-        <variable
-                name="viewModel"
-                type="ezike.tobenna.petform.ui.FormViewModel"/>
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/layout_bg"
+            android:orientation="vertical"
             tools:context=".ui.MainActivity">
-
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/header_text_size"
-                    tools:text="@string/app_name"
-                    android:padding="@dimen/parent_margin_start"
-                    android:text="@{viewModel.formData.name}"
-            />
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:scrollbars="vertical"
-                app:items="@{viewModel.elements}"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/border_top"
-                android:drawableTop="@color/colorAccent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" android:id="@+id/linearLayout">
-
-            <TextView
-                    android:id="@+id/prev_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="start|center"
-                    android:padding="@dimen/previous_text_padding"
-                    android:textSize="@dimen/prev_text_size"
-                    android:text="@string/previous"
-                    android:drawableStart="@drawable/back_arrow"
-                    android:drawablePadding="@dimen/text_drawable_padding"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:focusable="true"/>
-
-            <TextView
-                    android:id="@+id/next_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:padding="@dimen/next_text_padding"
-                    android:textSize="@dimen/next_text_size"
-                    android:text="@string/next"
-                    android:drawablePadding="@dimen/text_drawable_padding"
-                    android:drawableEnd="@drawable/forward_arrow"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:focusable="true"/>
-
-        </LinearLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </layout>

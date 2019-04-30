@@ -22,10 +22,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/formattednumeric_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/text_input_edittext"
                     android:inputType="phone"
-                    android:maxLines="1"/>
+            />
 
         </com.google.android.material.textfield.TextInputLayout>
 

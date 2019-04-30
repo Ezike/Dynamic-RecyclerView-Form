@@ -15,14 +15,21 @@
     <style name="parent_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/parent_margin_start</item>
         <item name="android:layout_marginEnd">@dimen/parent_margin_end</item>
         <item name="android:layout_marginTop">@dimen/parent_margin_top</item>
     </style>
 
-    <style name="text_input_layout" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="text_input_layout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+
     </style>
 
+    <style name="text_input_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:freezesText">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
 </resources>

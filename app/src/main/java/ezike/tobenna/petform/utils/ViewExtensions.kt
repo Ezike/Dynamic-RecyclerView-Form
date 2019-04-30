@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 fun View.visible() {
     visibility = View.VISIBLE
@@ -33,4 +33,10 @@ fun FragmentActivity.toast(text: String, duration: Int = Toast.LENGTH_SHORT) {
  */
 fun ViewGroup.inflate(layoutRes: Int): View {
     return LayoutInflater.from(context).inflate(layoutRes, this, false)
+}
+
+inline fun FragmentManager.transact(action: FragmentTransaction.() -> Unit) {
+    beginTransaction().apply {
+        action()
+    }.commit()
 }

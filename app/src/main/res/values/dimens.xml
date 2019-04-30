@@ -4,14 +4,23 @@
     <dimen name="cardview_radius">8dp</dimen>
     <dimen name="stroke_width">1dp</dimen>
     <dimen name="parent_margin_start">16dp</dimen>
-    <dimen name="parent_margin_end">@dimen/parent_margin_start</dimen>
+    <dimen name="parent_margin_end">24dp</dimen>
     <dimen name="parent_margin_top">16dp</dimen>
     <dimen name="text_input_min_width">350dp</dimen>
     <dimen name="text_input_margin">16dp</dimen>
-    <dimen name="header_text_size">28sp</dimen>
+    <dimen name="header_text_size">24sp</dimen>
     <dimen name="text_drawable_padding">8dp</dimen>
     <dimen name="previous_text_padding">16dp</dimen>
     <dimen name="prev_text_size">20sp</dimen>
     <dimen name="next_text_padding">16dp</dimen>
     <dimen name="next_text_size">20sp</dimen>
+    <dimen name="page_no_margin_top">32dp</dimen>
+    <dimen name="page_no_margin_start">16dp</dimen>
+    <dimen name="page_no_text_size">18sp</dimen>
+    <dimen name="questions_rv_margin_start">16dp</dimen>
+    <dimen name="section_label_text_size">22sp</dimen>
+    <dimen name="questions_rv_margin_top">@dimen/questions_rv_margin_start</dimen>
+    <dimen name="title_padding">16dp</dimen>
+    <dimen name="title_margin_top">16dp</dimen>
+    <dimen name="questions_rv_bottom_margin">16dp</dimen>
 </resources>
