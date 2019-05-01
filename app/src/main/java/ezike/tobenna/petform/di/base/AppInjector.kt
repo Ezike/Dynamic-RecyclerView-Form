@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
-import ezike.tobenna.petform.PetApplication
+import ezike.tobenna.petform.FormApplication
 import ezike.tobenna.petform.di.DaggerAppComponent
 
 /**
@@ -17,7 +17,7 @@ import ezike.tobenna.petform.di.DaggerAppComponent
  */
 object AppInjector {
 
-    fun init(app: PetApplication) {
+    fun init(app: FormApplication) {
         DaggerAppComponent.builder().application(app).build().inject(app)
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {

@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import ezike.tobenna.petform.PetApplication
+import ezike.tobenna.petform.FormApplication
 import ezike.tobenna.petform.di.module.ActivityModule
 import ezike.tobenna.petform.di.module.AppModule
 import ezike.tobenna.petform.di.module.SourceModule
@@ -34,5 +34,5 @@ interface AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(petApplication: PetApplication)
+    fun inject(formApplication: FormApplication)
 }

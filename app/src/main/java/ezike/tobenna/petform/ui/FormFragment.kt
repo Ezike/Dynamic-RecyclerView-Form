@@ -11,6 +11,7 @@ import ezike.tobenna.petform.databinding.FragmentFormBinding
 import ezike.tobenna.petform.ui.adapter.FormAdapter
 import ezike.tobenna.petform.ui.base.BaseFragment
 import ezike.tobenna.petform.utils.getViewModel
+import timber.log.Timber
 
 class FormFragment : BaseFragment() {
 
@@ -18,9 +19,7 @@ class FormFragment : BaseFragment() {
 
     private val page by lazy { arguments!!.getParcelable<Pages>(PAGE_ITEM_KEY) }
 
-    private val pageNumber by lazy { arguments!!.getInt(PAGE_NUMBER_KEY) }
-
-    private val pagePosition by lazy { arguments!!.getInt(PAGE_POSITION_KEY) }
+    private val pageNumber by lazy { Integer.valueOf(page!!.label.substring(5, 6)) }
 
     private lateinit var elements: ArrayList<Elements>
 
@@ -31,11 +30,16 @@ class FormFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val currentPage = pageNumber + 1
+        Timber.d("onCreateView")
+
+        Timber.d("$pageNumber")
 
         binding = FragmentFormBinding.inflate(inflater, container, false).apply {
-            pageNo.text = "$currentPage"
-            section = page!!.sections[pageNumber]
+
+            pageNo.text = "$pageNumber"
+
+            section = page!!.sections[0]
+
             viewModel = getViewModel<FormViewModel>()
 
             recyclerView.apply {
@@ -51,9 +55,19 @@ class FormFragment : BaseFragment() {
 
         super.onActivityCreated(savedInstanceState)
 
+        Timber.d("onActivityCreated")
+
         getElements()
 
         binding.viewModel?.setElements(elements)
+
+        binding.nextBtn.setOnClickListener {
+            binding.viewModel?.nextStep()
+        }
+
+        binding.prevBtn.setOnClickListener {
+            binding.viewModel?.previousStep()
+        }
 
     }
 
@@ -71,15 +85,11 @@ class FormFragment : BaseFragment() {
     companion object {
 
         private const val PAGE_ITEM_KEY = "page_item_key"
-        private const val PAGE_NUMBER_KEY = "page_number_key"
-        private const val PAGE_POSITION_KEY = "page_position_key"
 
-        fun newInstance(page: Pages, pageNumber: Int, pagePosition: Int) = FormFragment().apply {
+        fun newInstance(page: Pages) = FormFragment().apply {
 
             val args = Bundle().apply {
                 putParcelable(PAGE_ITEM_KEY, page)
-                putInt(PAGE_NUMBER_KEY, pageNumber)
-                putInt(PAGE_POSITION_KEY, pagePosition)
             }
 
             arguments = args

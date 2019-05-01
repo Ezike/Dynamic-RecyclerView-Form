@@ -18,8 +18,6 @@
                 android:id="@+id/yesno_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minWidth="@dimen/text_input_min_width"
-                android:layout_margin="@dimen/text_input_margin"
                 app:ms_alwaysShowFloatingLabel="true"
                 app:hint="@{element.label}"
                 android:entries="@array/yes_no"

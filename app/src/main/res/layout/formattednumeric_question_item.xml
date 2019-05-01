@@ -23,6 +23,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/formattednumeric_edit"
                     style="@style/text_input_edittext"
+                    android:maxLength="11"
                     android:inputType="phone"
             />
 

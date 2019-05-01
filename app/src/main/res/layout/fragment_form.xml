@@ -20,12 +20,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/layout_bg"
-            tools:context=".ui.MainActivity">
+            tools:context=".ui.activity.FormActivity">
 
         <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="@dimen/toolbar_margin_top"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -35,6 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:fontFamily="monospace"
                     android:layout_gravity="center"
                     android:textSize="@dimen/header_text_size"
                     tools:text="@string/app_name"
@@ -74,7 +76,6 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scrollbars="vertical"
                 app:items="@{viewModel.elements}"
                 android:layout_marginBottom="@dimen/questions_rv_bottom_margin"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -101,12 +102,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="start|center"
+                    android:gravity="center"
                     android:padding="@dimen/previous_text_padding"
                     android:textSize="@dimen/prev_text_size"
                     android:text="@string/previous"
-                    android:drawableStart="@drawable/back_arrow"
-                    android:drawablePadding="@dimen/text_drawable_padding"
+                    app:visibleGone="@{viewModel.hasPrevious()}"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"/>
@@ -116,12 +116,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="end|center"
+                    android:gravity="center"
                     android:padding="@dimen/next_text_padding"
                     android:textSize="@dimen/next_text_size"
                     android:text="@string/next"
-                    android:drawablePadding="@dimen/text_drawable_padding"
-                    android:drawableEnd="@drawable/forward_arrow"
+                    app:showSubmit="@{viewModel.hasNext()}"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:focusable="true"/>

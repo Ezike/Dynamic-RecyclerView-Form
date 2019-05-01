@@ -23,7 +23,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_edit"
                     style="@style/text_input_edittext"
-                    android:inputType="text"/>
+                    android:inputType="textPersonName|textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

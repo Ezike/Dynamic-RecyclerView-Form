@@ -4,8 +4,8 @@
     <string name="form_image">form image</string>
     <string name="phone_number">Phone No.</string>
     <string name="enter_text">Enter Text</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="next">NEXT</string>
+    <string name="previous">PREVIOUS</string>
 
     <string-array name="yes_no">
         <item>Yes</item>
@@ -13,4 +13,7 @@
     </string-array>
 
     <string name="required">*Required</string>
+    <string name="submit">SUBMIT</string>
+    <string name="splash_name">Pet Adoption Form</string>
+    <string name="no_input_error">Field cannot be blank</string>
 </resources>

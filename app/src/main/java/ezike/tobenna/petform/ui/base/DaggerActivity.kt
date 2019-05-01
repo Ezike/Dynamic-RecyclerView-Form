@@ -2,7 +2,6 @@ package ezike.tobenna.petform.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -28,11 +27,11 @@ abstract class DaggerActivity : AppCompatActivity(), HasSupportFragmentInjector 
 
     var frameId = -1
 
-    var tag = "-1"
+    private val manager = supportFragmentManager
 
-    fun addFragment(fragment: Fragment, fragmentManager: FragmentManager, tag: String) {
+    fun addFragment(fragment: Fragment, tag: String) {
 
-        fragmentManager.transact {
+        manager.transact {
             setCustomAnimations(
                 R.anim.anim_slide_left_enter,
                 R.anim.anim_slide_left_exit,
@@ -44,9 +43,9 @@ abstract class DaggerActivity : AppCompatActivity(), HasSupportFragmentInjector 
         }
     }
 
-    fun replaceFragmentInActivity(fragment: Fragment) {
+    fun replaceFragmentInActivity(fragment: Fragment, tag: String) {
 
-        supportFragmentManager.transact {
+        manager.transact {
             setCustomAnimations(
                 R.anim.anim_slide_left_enter,
                 R.anim.anim_slide_left_exit,
